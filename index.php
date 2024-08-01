@@ -1,3 +1,7 @@
+<?php
+$json=file_get_contents("./data.json");
+$info=json_decode($json,true);
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +22,8 @@
       <div>
         <button class="btn btn-primary">
           <i class="fa fa-sign-in"></i> Login</button>
-      </div>
+         
+     </div>
     </div>
     <table class="table table-dark">
       <thead>
@@ -35,6 +40,17 @@
       <tbody>
 
         <!-- Write your code here -->
+         <?php foreach($info as $element):?>
+          <tr>
+            <td><img src ="<?php echo $element["image"]["thumbnail"]?>"></td>
+            <td><?php echo $element["name"]["english"] ?> </td>
+            <td><?php echo  strtoupper( $element ["species"]);?></td>
+            <td><?php echo $element ["description"] ?> </td>
+            <td><?php echo $element["profile"] ["weight"] ?> </td>
+            <td><?php echo $element ["profile"]["height"] ?> </td>
+            <td> <button class="button">collect</button> </td>
+          </tr>
+          <?php endforeach;?>
       </tbody>
     </table>
 
