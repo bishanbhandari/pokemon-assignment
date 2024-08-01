@@ -22,6 +22,9 @@ $info=json_decode($json,true);
       <div>
         <button class="btn btn-primary">
           <i class="fa fa-sign-in"></i> Login</button>
+          <button class="btn btn-primary"><i class="fa fa-cloud"></i>GO TO CLOUD</button>
+          <button class="btn btn-primary"><i class="fa fa-info"></i>(INFO)</button>
+          <button class="btn btn-primary"><i class="fa fa-sign-out"></i>SIGNOUT</button>
          
      </div>
     </div>
@@ -48,7 +51,7 @@ $info=json_decode($json,true);
             <td><?php echo $element ["description"] ?> </td>
             <td><?php echo $element["profile"] ["weight"] ?> </td>
             <td><?php echo $element ["profile"]["height"] ?> </td>
-            <td> <button class="button">collect</button> </td>
+            <td> <button class="btn btn-primary"><i class="fa fa-bug"></i>COLLECT</button> </td>
           </tr>
           <?php endforeach;?>
       </tbody>
